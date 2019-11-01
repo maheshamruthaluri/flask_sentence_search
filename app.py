@@ -1,34 +1,29 @@
 from flask import Flask
-from flask_restplus import Api, Resource
+from flask_restplus import Api, Resource, reqparse
+
+from request_handler import TARGET_SENTENCE
+from service_layer.find_count import FindCount
 
 app = Flask(__name__)
 api = Api(app)
 
+
+find_count = FindCount()
+
 @api.route('/count')
 class Count_Words(Resource):
+
+    @api.expect(TARGET_SENTENCE)
     def get(self):
         """
         This method reads the text file
         :return:
         """
-        lines = open('example.txt')
-        result = self.find_count(self, l)
-        return {'hey': 'there'}
-
-    def find_count(self, lines, target):
-        result = {}
-        result['word'] = target
-        result['sentences'] = []
-        for line in lines:
-            count = 0
-            words = line.split(" ")
-            for word in words:
-                word = word.replace('.', '')
-        #         print(word)
-                if word == target:
-                    count += 1
-                    result['sentences'].append({'sentence': line, 'count': count})
+        arguments = TARGET_SENTENCE.parse_args(strict=True)
+        lines = open('example.txt', 'r')
+        result = find_count.calculate_count(lines, arguments)
         return result
+
 
 if __name__=='__main__':
     app.run(debug=True)
