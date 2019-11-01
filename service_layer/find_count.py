@@ -1,3 +1,6 @@
+import re
+
+
 class FindCount:
 
     @staticmethod
@@ -8,17 +11,17 @@ class FindCount:
         :param target: 
         :return: 
         """
+        sentences = []
         result = {}
-        result['word'] = target.get('word')
-        result['sentences'] = []
+        result['word'] = target
+        result['sentences'] = sentences
+        regex = re.compile('\\b' + target + '\\b')
         for line in lines:
-            count = 0
-            words = line.split(" ")
-            for word in words:
-                word = word.replace('.', '')
-                if word == target.get('word'):
-                    print(word)
-                    count += 1
-                    result['sentences'].append({'sentence': '', 'count': ''})
-        print(result)
+            count = len(regex.findall(line))
+            if count:
+                sentences.append({'sentence': line.strip('\n'),
+                                            'count': count})
+        result['sentences'] = sorted(result['sentences'], key=lambda item: item['count'],
+                                     reverse=True)
         return result
+
