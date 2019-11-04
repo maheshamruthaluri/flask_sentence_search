@@ -8,7 +8,7 @@ Have the file path for the text file ready.
 Run the command
 ### FILE_PATH=<text_file_path> python3 -m sentence_search
 This is an example command for the given file.
-### FILE_PATH='/Users/maheshamruthaluri/convey/flask_sentence_search/example.txt' python -m sentence_search
+### FILE_PATH='/Users/username/convey/flask_sentence_search/example.txt' python -m sentence_search
 
 ## Running from the command line
 ### curl --globoff 'http://localhost:5000/count?word=eggplant'
