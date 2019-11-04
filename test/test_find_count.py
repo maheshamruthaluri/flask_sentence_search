@@ -1,6 +1,6 @@
 import unittest
 
-from flask_sentence_search.service_layer.find_count import FindCount
+from sentence_search.service_layer.find_count import FindCount
 
 
 class TestFindCount(unittest.TestCase):
@@ -24,7 +24,6 @@ class TestFindCount(unittest.TestCase):
 
     def test_calculate_count_2(self):
         result = self.find_count.calculate_count(self.lines_with_comma, "turned")
-
         assert result == {'word': 'turned',
                            'sentences': [{'sentence': "As he turned, to go he heard the train", "count": 1}]}
 
