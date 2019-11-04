@@ -5,5 +5,4 @@
 # Distribution / packaging
 .Python
 .coverage
-
-
+htmlcov/
