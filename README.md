@@ -7,7 +7,7 @@ From the command line navigate to the project folder's directory.
 Have the file path for the text file ready.
 
 ### Install requirements and dependencies
-Assuming python3 is installed run the following command to install virtual env
+Assuming python3 is installed run the following commands
 1. python3 -m venv venv
 2. source venv/bin/activate
 3. pip install -r requirements.txt
