@@ -32,4 +32,3 @@ class TestFindCount(unittest.TestCase):
         assert result == {"word": "all's",
                            "sentences": [{"sentence": "I'll have your all's orders up in just a minute", "count": 1}]}
 
-

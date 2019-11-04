@@ -21,7 +21,12 @@ class Count_Words(Resource):
         This method reads the text file
         :return:
         """
+        result = {}
         arguments = TARGET_SENTENCE.parse_args(strict=True)
         lines = open(os.getenv('FILE_PATH'), 'r')
-        result = find_count.calculate_count(lines, arguments.get('word'))
+        if arguments.get('word'):
+            result = find_count.calculate_count(lines, arguments.get('word'))
+        else:
+            result['word'] = ""
+            result['sentences'] = []
         return result
