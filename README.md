@@ -2,7 +2,7 @@
 Rest API to search and count for the number of times a word has occured in a sentence.
 
 ## Steps to run the code
-Download the zip folder and unzip it in a desired folder.
+Download the zip file and unzip it in a desired folder.
 From the command line navigate to the project folder's directory.
 Have the file path for the text file ready.
 Run the command
