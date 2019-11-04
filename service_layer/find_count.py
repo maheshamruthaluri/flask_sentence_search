@@ -19,7 +19,7 @@ class FindCount:
         for line in lines:
             count = len(regex.findall(line))
             if count:
-                sentences.append({'sentence': line.strip('\n'),
+                sentences.append({'sentence': line.strip('\n').replace('.', ''),
                                             'count': count})
         result['sentences'] = sorted(result['sentences'], key=lambda item: item['count'],
                                      reverse=True)
