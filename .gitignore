@@ -4,5 +4,6 @@
 *.pyc
 # Distribution / packaging
 .Python
+.coverage
 
 
