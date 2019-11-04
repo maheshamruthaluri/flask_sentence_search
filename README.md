@@ -10,7 +10,7 @@ Have the file path for the text file ready.
 Assuming python3 is installed run the following commands
 1. python3 -m venv venv
 2. source venv/bin/activate
-3. pip install -r requirements.txt
+3. pip3 install -r requirements.txt
 
 Run the command
 ### FILE_PATH=<text_file_path> python3 -m sentence_search
